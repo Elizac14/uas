@@ -9,6 +9,7 @@ class Employee extends Model
 {
     use HasFactory;
     public $table = "employee";
+    protected $guarded = [];
     protected $fillable = [
         'nama', 'jabatan', 'alamat', 'umur', 'image'
     ];
