@@ -1,9 +1,10 @@
 @extends('layouts.app')
 @section('content')
-
+<a href={{ route('home') }}>Kembali</a>
 <div class="w-8/12 bg-white shadow-md rounded-md p-4 mx-auto">
     <h5 class="mb-4 text-xl font-bold">Tambah Karyawan</h5>
-    <form>
+    <form action={{ route('employee.store') }} method="POST" enctype="multipart/form-data">
+        @csrf
       <div class="grid md:grid-cols-2 md:gap-x-4">
         <div class="relative z-0 w-full mb-6 group border px-2">
             <input type="text" name="floating_first_name" id="floating_first_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />

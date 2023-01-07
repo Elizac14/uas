@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmployeeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,15 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/detail-karyawan', function () {
-    return view('detail-karyawan');
-});
-Route::get('/tambah-karyawan', function () {
-    return view('tambah-karyawan');
-});
-Route::get('/edit-karyawan', function () {
-    return view('edit-karyawan');
-});
+Route::resource('employee', EmployeeController::class);
 
 Auth::routes();
 
